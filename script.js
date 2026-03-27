@@ -62,16 +62,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const startCounters = () => {
         statNumbers.forEach(counter => {
             const target = +counter.getAttribute('data-target');
+            const suffix = counter.innerText.includes('+') ? '+' : '';
             const increment = target / 50; // Adjust speed
             
+            let current = 0;
             const updateCounter = () => {
-                const current = +counter.innerText;
-                
                 if (current < target) {
-                    counter.innerText = Math.ceil(current + increment);
+                    current += increment;
+                    counter.innerText = Math.ceil(current) + (current >= target ? suffix : '');
                     setTimeout(updateCounter, 30);
                 } else {
-                    counter.innerText = target;
+                    counter.innerText = target + suffix;
                 }
             };
             
@@ -191,55 +192,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Auto slide every 5s
         setInterval(() => showSlide(currentSlide + 1), 5000);
     }
-
-    // --- Gender Selection Logic ---
-    const genderCards = document.querySelectorAll('.gender-card');
-    genderCards.forEach(card => {
-        card.addEventListener('click', () => {
-            genderCards.forEach(c => c.classList.remove('active'));
-            card.classList.add('active');
-        });
-    });
-
 });
 
-// --- BMI Calculator Implementation ---
-function calculateBMI() {
-    const age = document.getElementById('bmi-age').value;
-    const height = document.getElementById('bmi-height').value;
-    const weight = document.getElementById('bmi-weight').value;
-    const resultDiv = document.getElementById('bmi-result');
-    const bmiValue = document.getElementById('bmi-value');
-    const bmiStatus = document.getElementById('bmi-status');
-    const chartItems = document.querySelectorAll('.chart-item');
-
-    if (height > 0 && weight > 0 && age > 0) {
-        const bmi = (weight / ((height / 100) * (height / 100))).toFixed(1);
-        bmiValue.innerText = bmi;
-        resultDiv.style.display = 'block';
-
-        // Clear active classes
-        chartItems.forEach(item => {
-            item.classList.remove('active-healthy', 'active-warning', 'active-danger');
-        });
-
-        if (bmi < 18.5) {
-            bmiStatus.innerText = "Underweight";
-            chartItems[0].classList.add('active-warning');
-        } else if (bmi >= 18.5 && bmi <= 24.9) {
-            bmiStatus.innerText = "Healthy / Normal";
-            chartItems[1].classList.add('active-healthy');
-        } else if (bmi >= 25 && bmi <= 29.9) {
-            bmiStatus.innerText = "Overweight";
-            chartItems[2].classList.add('active-warning');
-        } else {
-            bmiStatus.innerText = "Obese";
-            chartItems[3].classList.add('active-danger');
-        }
-    } else {
-        alert("Please enter valid height and weight values.");
-    }
-}
 
 // --- Lead Form WhatsApp Submission ---
 function sendWhatsAppLead(event) {
