@@ -4,34 +4,35 @@
  */
 
 :root {
-    /* Exact Gym Board Theme: Neon Split */
-    --clr-bg-main: #050505;             /* Deep Black (to match the board) */
-    --clr-bg-sec: #0d0d0d;              /* Slightly lighter black for cards */
-    --clr-bg-gradient: linear-gradient(135deg, #0a0a0a 0%, #000000 100%);
-    --clr-bg-tertiary: #1a1a1a;         /* Deep gray for borders */
+    /* Exact Gym Board Theme: Ultra-Premium Dark */
+    --clr-bg-main: #050505;
+    --clr-bg-sec: rgba(13, 13, 13, 0.7); /* Translucent for glassmorphism */
+    --clr-bg-gradient: radial-gradient(circle at top right, #111 0%, #000 100%);
+    --clr-bg-tertiary: #1a1a1a;
 
-    --clr-accent: #ff007f;              /* Neon Magenta (from BODY) */
-    --clr-accent-glow: rgba(255, 0, 127, 0.5);
+    --clr-accent: #ff007f;             /* Neon Magenta */
+    --clr-accent-hover: #e60072;
+    --clr-accent-glow: rgba(255, 0, 127, 0.4);
     
-    --clr-card-glow: #00e5ff;            /* Neon Cyan/Blue (from FIT & FACTORY) */
-    --clr-card-glow-shadow: rgba(0, 229, 255, 0.4);
+    --clr-card-glow: #00e5ff;           /* Neon Cyan */
+    --clr-card-glow-shadow: rgba(0, 229, 255, 0.3);
 
     --clr-text-main: #ffffff;
-    --clr-text-muted: #888888;
-    --clr-text-light: #ffffff;
+    --clr-text-muted: #949494;
+    --clr-text-light: #f8f8f8;
 
     /* Typography */
     --font-main: 'Outfit', sans-serif;
 
     /* Spacing & Utilities */
-    --transition-fast: 0.3s ease;
-    --transition-smooth: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-fast: 0.2s ease;
+    --transition-smooth: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 
-    --border-radius-sm: 4px;
-    --border-radius-md: 8px;
-    --border-radius-lg: 16px;
+    --border-radius-sm: 6px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 24px;
 
-    --section-padding: 40px 0;
+    --section-padding: 100px 0;
 }
 
 /* Reset & Base Styles */
@@ -128,12 +129,12 @@ body.loading {
 
 .container {
     width: 90%;
-    max-width: 1280px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
 .container-sm {
-    max-width: 1000px;
+    max-width: 1100px;
 }
 
 .text-center {
@@ -195,25 +196,26 @@ body.loading {
 }
 
 .section-title {
-    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 900;
-    line-height: 1.1;
-    margin-bottom: 0.8rem;
+    line-height: 1;
+    margin-bottom: 1.5rem;
     text-transform: uppercase;
+    letter-spacing: -1px;
 }
 
 .section-title span {
     color: var(--clr-card-glow);
-    -webkit-text-stroke: 1.5px #111111;
-    position: relative;
-    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+    text-shadow: 0 0 20px var(--clr-card-glow-shadow);
+    -webkit-text-stroke: 0px transparent; /* Cleaner look */
 }
 
 .section-desc {
     color: var(--clr-text-muted);
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin-bottom: 3.5rem;
+    line-height: 1.6;
 }
 
 /* Buttons */
@@ -247,30 +249,15 @@ body.loading {
 }
 
 .btn-primary {
-    background-color: var(--clr-accent);
+    background: linear-gradient(45deg, var(--clr-accent), #ff5eb3);
     color: white;
-    box-shadow: 0 4px 15px var(--clr-accent-glow);
-}
-
-.btn-primary::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    background-color: var(--clr-accent-hover);
-    transition: var(--transition-smooth);
-    z-index: -1;
-}
-
-.btn-primary:hover::before {
-    width: 100%;
+    box-shadow: 0 8px 30px var(--clr-accent-glow);
+    transition: all 0.4s ease;
 }
 
 .btn-primary:hover {
-    box-shadow: 0 6px 20px var(--clr-accent-glow);
-    transform: translateY(-2px);
+    box-shadow: 0 12px 40px var(--clr-accent-glow);
+    transform: translateY(-4px) scale(1.02);
 }
 
 .btn-secondary {
@@ -1261,23 +1248,35 @@ body.loading {
 }
 
 .pricing-card {
-    background: var(--clr-bg-sec);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid var(--clr-bg-tertiary);
-    border-radius: var(--border-radius-md);
-    padding: 2.5rem 1.5rem;
+    background: rgba(20, 20, 20, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius-lg);
+    padding: 3.5rem 2.5rem;
     position: relative;
     transition: var(--transition-smooth);
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+}
+
+.pricing-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--clr-card-glow);
+    opacity: 0.3;
 }
 
 .pricing-card:hover {
-    transform: translateY(-10px);
-    background: #111111;
+    transform: translateY(-15px);
     border-color: var(--clr-card-glow);
-    box-shadow: 0 15px 40px var(--clr-card-glow-shadow);
+    box-shadow: 0 30px 60px rgba(0, 229, 255, 0.1);
+    background: rgba(25, 25, 25, 0.8);
 }
 
 .pricing-card.popular {
@@ -1427,10 +1426,12 @@ footer {
 
 .footer-col h4 {
     font-size: 1.2rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     position: relative;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.8rem;
     color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .footer-col h4::after {
@@ -1438,9 +1439,11 @@ footer {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 30px;
-    height: 2px;
+    width: 60px;
+    height: 3px;
     background-color: var(--clr-accent);
+    box-shadow: 0 0 12px var(--clr-accent-glow);
+    border-radius: 2px;
 }
 
 .footer-col p {
@@ -1451,7 +1454,7 @@ footer {
 .footer-col ul {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 1rem;
 }
 
 .footer-col ul li a {
@@ -1466,9 +1469,21 @@ footer {
 
 .contact-info li {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #aaaaaa;
+    align-items: flex-start;
+    gap: 15px;
+    color: #e0e0e0;
+    margin-bottom: 0.5rem;
+}
+
+.contact-info a {
+    color: var(--clr-accent);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.contact-info a:hover {
+    color: var(--clr-text-main);
+    text-decoration: underline;
 }
 
 .contact-info i {
@@ -1520,7 +1535,17 @@ footer {
 
 .newsletter-form button {
     border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
-    padding: 0.8rem 1.2rem;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--clr-accent);
+    color: white;
+    font-weight: 800;
+    box-shadow: 0 0 20px var(--clr-accent-glow);
+    white-space: nowrap;
+}
+
+.newsletter-form button:hover {
+    background-color: var(--clr-accent-hover);
+    box-shadow: 0 0 30px var(--clr-accent-glow);
 }
 
 .footer-bottom {
