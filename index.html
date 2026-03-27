@@ -168,21 +168,17 @@
     <!-- Stats Section -->
     <section class="stats">
         <div class="container container-sm reveal">
-            <div class="stats-grid">
+            <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr);">
                 <div class="stat-box">
-                    <h3 class="stat-number" data-target="2500">0</h3>
-                    <p class="stat-label">Active Members</p>
-                </div>
-                <div class="stat-box">
-                    <h3 class="stat-number" data-target="50">0</h3>
+                    <h3 class="stat-number" data-target="5">5+</h3>
                     <p class="stat-label">Expert Trainers</p>
                 </div>
                 <div class="stat-box">
-                    <h3 class="stat-number" data-target="150">0</h3>
+                    <h3 class="stat-number" data-target="30">30+</h3>
                     <p class="stat-label">Modern Machines</p>
                 </div>
                 <div class="stat-box">
-                    <h3 class="stat-number" data-target="24">0</h3>
+                    <h3 class="stat-number" data-target="24">24</h3>
                     <p class="stat-label">Hour Access</p>
                 </div>
             </div>
@@ -377,61 +373,7 @@
         </div>
     </section>
 
-    <!-- BMI Calculator Section -->
-    <section class="bmi-section reveal">
-        <div class="container bmi-grid">
-            <div class="bmi-content">
-                <div class="section-header">
-                    <h3 class="section-subtitle">FITNESS TOOL</h3>
-                    <h2 class="section-title">CALCULATE YOUR <span>BMI</span></h2>
-                </div>
-                <p>Track your health progress with our precise BMI calculator. Know your body mass index and get the right training plan tailored for you.</p>
-                <div class="bmi-form mt-4">
-                    <!-- Gender Selection -->
-                    <div class="gender-selection mb-4">
-                        <label class="d-block mb-3">SELECT GENDER</label>
-                        <div class="gender-cards">
-                            <div class="gender-card active" data-gender="male">
-                                <i class="fas fa-mars"></i>
-                                <span>Male</span>
-                            </div>
-                            <div class="gender-card" data-gender="female">
-                                <i class="fas fa-venus"></i>
-                                <span>Female</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Age</label>
-                            <input type="number" id="bmi-age" placeholder="e.g. 25">
-                        </div>
-                        <div class="form-group">
-                            <label>Height (cm)</label>
-                            <input type="number" id="bmi-height" placeholder="e.g. 175">
-                        </div>
-                        <div class="form-group">
-                            <label>Weight (kg)</label>
-                            <input type="number" id="bmi-weight" placeholder="e.g. 70">
-                        </div>
-                    </div>
-                    <button class="btn-primary w-100 mt-4" onclick="calculateBMI()">Calculate Your BMI <i class="fas fa-calculator"></i></button>
-                    <div id="bmi-result" class="bmi-result-card mt-4" style="display: none;">
-                        <span class="bmi-label">Your BMI Result:</span>
-                        <h4 id="bmi-value">0.0</h4>
-                        <p id="bmi-status">Healthy</p>
-                    </div>
-                </div>
-            </div>
-            <div class="bmi-chart">
-                <div class="chart-item underweight"><span>Underweight</span> <span>&lt; 18.5</span></div>
-                <div class="chart-item normal active-healthy"><span>Normal</span> <span>18.5 - 24.9</span></div>
-                <div class="chart-item overweight"><span>Overweight</span> <span>25 - 29.9</span></div>
-                <div class="chart-item obese"><span>Obese</span> <span>&gt; 30</span></div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Trainers Section -->
     <section id="trainers" class="trainers">
@@ -511,11 +453,11 @@
                 <!-- 1 Month Plan -->
                 <div class="pricing-card reveal slide-up">
                     <div class="card-header">
-                        <span class="discount-tag">25% OFF PROMO</span>
+                        <span class="discount-tag">15% OFF SPECIAL</span>
                         <h3>1 Month</h3>
                         <div class="price">
-                            <span>₹</span><span class="price-value">1125</span>
-                            <span class="price-original">₹1500</span>
+                            <span>₹</span><span class="price-value">1,700</span>
+                            <span class="price-original">₹2,000</span>
                         </div>
                     </div>
                     <ul class="pricing-features">
@@ -531,18 +473,18 @@
                 <!-- 3 Months Plan -->
                 <div class="pricing-card reveal slide-up" style="transition-delay: 100ms;">
                     <div class="card-header">
-                        <span class="discount-tag">25% OFF PROMO</span>
+                        <span class="discount-tag">15% OFF SPECIAL</span>
                         <h3>3 Months</h3>
                         <div class="price">
-                            <span>₹</span><span class="price-value">3375</span>
-                            <span class="price-original">₹4500</span>
+                            <span>₹</span><span class="price-value">3,800</span>
+                            <span class="price-original">₹4,500</span>
                         </div>
                     </div>
                     <ul class="pricing-features">
                         <li><i class="fas fa-check"></i> Complete Gym Access</li>
                         <li><i class="fas fa-check"></i> Free Weights & Cardio</li>
                         <li><i class="fas fa-check"></i> Access to Group Classes</li>
-                        <li class="disabled"><i class="fas fa-times"></i> Monthly Diet Plan</li>
+                        <li><i class="fas fa-check"></i> 1 Free Steam Bath</li>
                         <li class="disabled"><i class="fas fa-times"></i> Personal Trainer</li>
                     </ul>
                     <a href="#" class="btn-secondary w-100">Buy Plan</a>
@@ -552,18 +494,18 @@
                 <div class="pricing-card popular reveal slide-up" style="transition-delay: 200ms;">
                     <div class="popular-badge">MOST POPULAR</div>
                     <div class="card-header">
-                        <span class="discount-tag">25% OFF PROMO</span>
+                        <span class="discount-tag">15% OFF SPECIAL</span>
                         <h3>6 Months</h3>
                         <div class="price">
-                            <span>₹</span><span class="price-value">5625</span>
-                            <span class="price-original">₹7500</span>
+                            <span>₹</span><span class="price-value">6,800</span>
+                            <span class="price-original">₹8,000</span>
                         </div>
                     </div>
                     <ul class="pricing-features">
                         <li><i class="fas fa-check"></i> 24/7 Premium Access</li>
                         <li><i class="fas fa-check"></i> All Group Classes Included</li>
+                        <li><i class="fas fa-check"></i> 3 Free Steam Baths</li>
                         <li><i class="fas fa-check"></i> Free Locker Facility</li>
-                        <li><i class="fas fa-check"></i> 1 Free PT Session</li>
                         <li class="disabled"><i class="fas fa-times"></i> Massage Therapy</li>
                     </ul>
                     <a href="#" class="btn-primary w-100">Get Started</a>
@@ -572,22 +514,28 @@
                 <!-- 1 Year Plan -->
                 <div class="pricing-card reveal slide-up" style="transition-delay: 300ms;">
                     <div class="card-header">
-                        <span class="discount-tag">25% OFF PROMO</span>
+                        <span class="discount-tag">15% OFF SPECIAL</span>
                         <h3>1 Year</h3>
                         <div class="price">
-                            <span>₹</span><span class="price-value">7875</span>
-                            <span class="price-original">₹10500</span>
+                            <span>₹</span><span class="price-value">11,000</span>
+                            <span class="price-original">₹13,000</span>
                         </div>
                     </div>
                     <ul class="pricing-features">
                         <li><i class="fas fa-check"></i> Ultimate VIP Access</li>
+                        <li><i class="fas fa-check"></i> 1 Month Free Personal Training</li>
+                        <li><i class="fas fa-check"></i> 6 Free Steam Baths</li>
                         <li><i class="fas fa-check"></i> Specialized Diet Plan</li>
-                        <li><i class="fas fa-check"></i> Unlimited Classes</li>
-                        <li><i class="fas fa-check"></i> 4 Free PT Sessions</li>
                         <li><i class="fas fa-check"></i> Supplement Discount</li>
                     </ul>
                     <a href="#" class="btn-secondary w-100">Buy Plan</a>
                 </div>
+            </div>
+            
+            <div class="pricing-notes reveal mt-4 pt-4 text-center" style="border-top: 1px solid var(--clr-bg-tertiary);">
+                <p style="color: var(--clr-text-muted); font-size: 0.9rem; margin-bottom: 0.5rem;"><i class="fas fa-info-circle"></i> Registration fees ₹500/- only.</p>
+                <p style="color: var(--clr-text-muted); font-size: 0.9rem; margin-bottom: 0.5rem;"><i class="fas fa-info-circle"></i> Fees is Non-Refundable in Any Condition.</p>
+                <p style="color: var(--clr-text-muted); font-size: 0.9rem;"><i class="fas fa-info-circle"></i> 1 Month Personal Training Free with 1 Year Package.</p>
             </div>
         </div>
     </section>
@@ -652,8 +600,8 @@
                     <h4>Contact Us</h4>
                     <ul class="contact-info">
                         <li><i class="fas fa-map-marker-alt"></i> <a href="https://share.google/e9KAYPAJawJ05ZtH2" target="_blank">FF-7,8,9, First Floor, Omaxe Avenue, Lucknow</a></li>
-                        <li><i class="fas fa-phone-alt"></i> +91 80900 00041</li>
-                        <li><i class="fas fa-envelope"></i> info@fbfgym.com</li>
+                        <li><i class="fas fa-phone-alt"></i> <a href="tel:+918090000041">+91 80900 00041</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@fbfgym.com">info@fbfgym.com</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -661,7 +609,7 @@
                     <p>Subscribe for fitness tips, motivation and exclusive offers.</p>
                     <form class="newsletter-form mt-3" onsubmit="event.preventDefault()">
                         <input type="email" placeholder="Your Email Address" required>
-                        <button type="submit" class="btn-primary">Send Message <i
+                        <button type="submit" class="btn-primary">SEND MESSAGE <i
                                 class="fas fa-paper-plane"></i></button>
                     </form>
                 </div>
