@@ -192,6 +192,16 @@ document.addEventListener('DOMContentLoaded', () => {
         // Auto slide every 5s
         setInterval(() => showSlide(currentSlide + 1), 5000);
     }
+    // --- About Section Image Slider ---
+    const aboutImages = document.querySelectorAll('.slider-wrapper img');
+    if (aboutImages.length > 0) {
+        let currentImg = 0;
+        setInterval(() => {
+            aboutImages[currentImg].classList.remove('active');
+            currentImg = (currentImg + 1) % aboutImages.length;
+            aboutImages[currentImg].classList.add('active');
+        }, 4000); // Change image every 4 seconds
+    }
 });
 
 
